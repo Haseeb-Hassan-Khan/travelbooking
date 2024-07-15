@@ -1,0 +1,122 @@
+<div class="container">
+	<header class="header">
+		<h1 id="title" class="text-center">Post Service</h1>
+		<p id="description" class="text-center">
+			Thank you for taking the time to help us improve the platform
+		</p>
+	</header>
+	<div class="form-wrap">	
+		<form  [formGroup]="adminForm" (ngSubmit)="postService()">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label id="name-label" for="name">Bus Name</label>
+						<input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" formControlName="bus_name" required>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label id="email-label" for="service_name">Service Name</label>
+						<input type="text" name="service_name" id="serviceName" placeholder="Enter service name" class="form-control" formControlName="service_name" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label id="vehicle-no" for="number">Vehicle No. <small>(optional)</small></label>
+						<input type="number" name="age" id="vehicle_number" min="10" max="99" class="form-control" formControlName="vehicle_no" placeholder="Enter vehicle no." >
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label id="nvehicle_img_lab" for="number">Vehicle Image</label>
+						<input type="text" name="age" id="vehicle_img"  formControlName="vehicle_imgUrl" class="form-control" placeholder="Select image" >
+					</div>
+				</div>
+			</div>
+
+            <div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>From</label>
+						<select id="from_dropdown" name="role" class="form-control" formControlName="destination" required>
+							<option disabled selected value>Select</option>
+							<option value="Karachi">Karachi</option>
+							<option value="Lahore">Lahore</option>
+							<option value="Faisalabad">Faisalabad</option>
+							<option value="Multan">Multan</option>
+							<option value="Islamabad">Islamabad</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>To</label>
+						<select id="to_dropdown" name="role" class="form-control" formControlName="arrival" required>
+							<option disabled selected value>Select</option>
+							<option value="Karachi">Karachi</option>
+							<option value="Lahore">Lahore</option>
+							<option value="Faisalabad">Faisalabad</option>
+							<option value="Multan">Multan</option>
+							<option value="Islamabad">Islamabad</option>
+						</select>
+					</div>
+				</div>
+
+                
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Would you recommend survey to a friend?</label>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="customRadioInline1" value="Definitely" formControlName="recommend_survey" class="custom-control-input" checked="">
+							<label class="custom-control-label" for="customRadioInline1">Definitely</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="customRadioInline2" value="Maybe" formControlName="recommend_survey" class="custom-control-input">
+							<label class="custom-control-label" for="customRadioInline2">Maybe</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="customRadioInline3" value="Not sure"  formControlName="recommend_survey" class="custom-control-input">
+							<label class="custom-control-label" for="customRadioInline3">Not sure</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Is this service air conditioned?</label>
+						<div class="custom-control custom-checkbox custom-control-inline">
+							<input type="checkbox" class="custom-control-input" name="yes" (change)="onCheckboxChange($event)" value="yes" formControlName="useful_survey" id="yes" >
+							<label class="custom-control-label" for="yes">Yes</label>
+						</div>
+						<div class="custom-control custom-checkbox custom-control-inline">
+							<input type="checkbox" class="custom-control-input" name="no" (change)="onCheckboxChange($event)" value="no" id="no" formControlName="useful_survey">
+							<label class="custom-control-label" for="no">No</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label>Leave Message</label>
+						<textarea  id="comments" class="form-control" name="comment" formControlName="message" placeholder="Enter your comment here..."></textarea>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<button type="submit" id="submit" class="btn btn-primary btn-block">Submit Service</button>
+				</div>
+			</div>
+
+		</form>
+	</div>	
+</div>

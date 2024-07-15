@@ -1,0 +1,224 @@
+.background-image{
+    background-image: url('https://dl.dropbox.com/scl/fi/fiwkc5arxi0ligvt72nic/YATNY4M3A6917_TP_V.jpg?rlkey=rind6mkx4z2a4sgluei8dhg9v&dl=0');
+    right: 0;
+    left: auto;
+    background-size: cover;
+    background-attachment: fixed;
+  }     
+  
+  @media(min-width:699px){
+   .sp{display: none !important;}
+  }
+  
+  @media(max-width:700px){
+   .pc{display: none !important;}
+  }
+  .home-banner {
+    position: relative;
+    width: 100%;
+}
+.main-img{
+    height: 500px;
+}
+
+.input-search-container {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+.holiday-coupo{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputForm {
+    width: 100%;
+    padding-left: 30px;
+}
+.animated-image {
+    transition: transform 0.3s ease-in-out;
+}
+.animated-image:hover {
+    transform: scale(1.1);
+}
+
+.animated-image:active {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+
+
+
+  
+  
+  /*Left*/
+  
+  
+  .plane {
+    margin-top: 250px;
+    margin-left:28px;
+    width: 78%;
+    -webkit-filter: drop-shadow(11px 11px 11px #058989 );
+    filter: drop-shadow(11px 11px 11px #058989);
+  }
+  
+  /* Right */
+  
+  .right {
+   height:580px;
+   width:40%;
+   float:right;
+   margin-right: 50px;
+   margin-top:80px;
+   position: relative;
+      }
+  
+  .right > h1, h4 {
+   color: #fff;
+    }
+  
+  .right > .book {
+    font-size: 90px;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-bottom: -75px;
+    font-family: 'Secular One', sans-serif;
+  }
+  .right > .travel {
+    margin-top: 20px;
+    font-size: 90px;
+    font-weight: bold;
+    font-family: 'Secular One', sans-serif;
+  }
+  .right > h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    margin-top: -80px;
+  }
+  
+  
+  /* FORM */
+  fieldset {
+    width: 84%;
+      margin: 30px auto;
+    margin-right: 30px;
+    background-color: #47D1D2;     padding: 2em;
+    border: none;
+  }
+  
+  .reservation {
+  text-transform: uppercase;
+  font-family: 'Hind', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color : #fff;
+  }
+  
+  #cities {
+  width: 96%;
+  border: 1px solid #fff;
+  background-color: #47D2D2;
+  margin-bottom: 45px;
+  padding: 0.5em;
+  height: 2em;
+  font-family: 'Raleway', sans-serif; 
+  color: #fff;
+  }
+  
+  #start, #adults-number {
+  border: 1px solid #fff;
+  background-color: #47D2D2;
+  margin-bottom: 25px;
+  padding: 0.5em;
+  height: 2em;
+  font-family: 'Raleway', sans-serif; 
+  color: #fff;
+  width: 90%;  
+  }
+  
+  .left2 {
+   
+  margin-top: -18px;
+  margin-bottom: 18px;
+  float: left;
+  width: 46%;
+  }
+  
+  #end, #children-number {
+  border: 1px solid #fff;
+  background-color: #47D2D2;
+  margin-bottom: 25px;
+  padding: 0.5em;
+  height: 2em;
+  font-family: 'Raleway', sans-serif; 
+  color: #fff;
+  width: 90%;
+  }
+  
+  .right2 {
+    margin-top: -18px;
+    float: right;
+    width: 46%;
+  }
+  
+  .search_btn {
+    
+    background-color: #FFBD26;
+    font-family: 'Hind', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-bottom: 4px solid #F8A426;
+    cursor:pointer;
+  }
+  
+ 
+
+  
+  /*slider*/
+  
+  .plane_img {
+    max-width: 50%;
+  }
+
+
+  
+  
+  
+  /*For tablet*/
+  
+
+    
+    /* For mobile */
+  
+ 
+  
+  
+
+    
+      
+    
+    
+  
+

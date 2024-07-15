@@ -1,0 +1,22 @@
+<div class="games">
+  <div *ngFor="let busOwner of busOwnerData" class="banner_wrapper">
+    <div class="banner">
+      <img [src]="busOwner.vehicle_imgUrl" alt="Banner Game" class="banner__image">
+    </div>
+    <div class="card__wrapper">
+      <div class="card">
+        <div class="card__info">
+          <img [src]="busOwner.vehicle_imgUrl" alt="Game" class="card__avatar">
+          <div>
+            <span>{{ busOwner.bus_name }}</span>
+            <p>Destination: {{ busOwner.destination }}</p>
+            <p>Arrival: {{ busOwner.arrival }}</p>
+          </div>
+        </div>
+        <button class="btn btn-primary" (click)="goToSelectedBusPage(busOwner)">Get</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

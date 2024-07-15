@@ -1,0 +1,118 @@
+<div class="mainContainer">
+  <div class="container">
+      <div class="logiform-container py-4">
+        <div *ngIf="showAlert" class="alert alert-danger d-flex align-items-center" role="alert">
+            <div>
+              Email already exist
+            </div>
+          </div>
+          <div class="flex-container d-flex flex-wrap justify-content-center bg-light p-0">
+              <div class="column d-block p-3 p-md-4 p-lg-5 p getstarted-col">
+                  <div class="d-flex gap-4 content p-3 px-md-4 py-md-5 px-lg-5 child-w-100 flex-wrap position-relative h-100 align-items-center">
+                          <div class="back-arrow position-relative">
+                              <button class="btn btn-semitransparent rounded-pill py-0 px-4 py-lg-2 px-lg-5"><i class="fa-solid fa-arrow-right-long text-white"></i></button>
+                          </div>
+                          <div class="text-content position-relative">
+                              <span class="text-secondary2">Hi Welcome!</span>
+                              <h2 class="text-white">Let's Get Started</h2>
+                              <p class="text-secondary2 mt-4">Create free account and get free access of full features for 7 days.
+                                  We invite you to join us and get better experience.
+                              </p>
+                          </div>
+                          <div class="content-icon position-relative">
+                              <img src="https://cdn.pixabay.com/photo/2016/06/15/16/16/man-1459246_1280.png" alt="" class="w-100">
+                          </div>
+                  </div>
+              </div>
+              <div class="column d-block p-3 d-flex align-items-center justify-content-center h-100">
+                  <div class="content">
+                      <div class="form-wrapper py-4">
+                          <h2 class="mb-4">Sign Up</h2>
+                          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                              <div class="form-input mb-3 p-0">
+                                  <label for="yourname" class="text-secondary">Your Name</label>
+                                  <div class="input-relative position-relative mt-1 mt-lg-2">
+                                      <input type="text" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="signup_name"  maxlength="20" formControlName="signup_name" >
+                                      <div class="nameinput-icon-feedback icon-feedback">
+                                          <i class="fa-solid fa-circle-exclamation text-danger icon"></i>
+                                          <i class="fa-solid fa-circle-check text-success icon"></i>
+                                      </div>
+                                  </div>
+                                  <div *ngIf="registerForm.controls['signup_name'].invalid && registerForm.controls['signup_name'].touched"
+                                      class="error-message text-danger">
+                                      Name is required.
+                                  </div>
+                              </div>
+                              <div class="form-input mb-3 p-0">
+                                <label for="youremail" class="text-secondary">Your Email</label>
+                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                    <input type="text" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="signup_email" maxlength="40" formControlName="signup_email">
+                                    <div class="nameinput-icon-feedback icon-feedback">
+                                        <i class="fa-solid fa-circle-exclamation text-danger icon"></i>
+                                        <i class="fa-solid fa-circle-check text-success icon"></i>
+                                    </div>
+                                </div>
+                                <div *ngIf="registerForm.get('signup_email')?.errors?.['required'] && registerForm.get('signup_email')?.touched"
+                                     class="error-message text-danger">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="registerForm.get('signup_email')?.errors?.['email'] && !registerForm.get('signup_email')?.errors?.['required'] && registerForm.get('signup_email')?.touched"
+                                     class="error-message text-danger">
+                                    Enter a valid email address.
+                                </div>
+                              </div>
+
+                              <div class="form-input mb-3 p-0">
+                                  <label for="yourpassword" class="text-secondary">Your Password</label>
+                                  <div class="input-relative position-relative mt-1 mt-lg-2">
+                                      <input type="password" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="signup_password"  maxlength="40"  formControlName="signup_password">
+                                      <div class="nameinput-icon-feedback icon-feedback">
+                                          <i class="fa-solid fa-circle-exclamation text-danger icon"></i>
+                                          <i class="fa-solid fa-circle-check text-success icon"></i>
+                                      </div>
+                                      <div id="showPassword" class="show-password">
+                                          <i class="fa-solid fa-eye icon"></i>
+                                          <i class="fa-solid fa-eye-slash icon"></i>
+                                      </div>
+                                  </div>
+                                  <div *ngIf="registerForm.controls['signup_password'].invalid && registerForm.controls['signup_password'].touched"
+                                    class="error-message text-danger">
+                                    Password is required.
+                                  </div>
+                              </div>
+                              <div class="form-check mb-3 p-0">
+                                  <input type="checkbox" name="rememberme" id="rememberMe">
+                                  <label for="rememberMe">Remember me</label>
+                              </div>
+                              <div class="form-submit">
+                                  <button id="btnCreateAccount" type="submit" class="btn btn-success w-100 rounded-pill py-lg-2 mt-1 mt-lg-2">
+                                      Create Account
+                                  </button>
+                              </div>
+                            </form>
+                          <div class="other-options-signup text-center py-3">
+                              <span class="text-dark">Or</span>
+                              <div class="signup-options-list d-flex flex-wrap gap-2 mt-2">
+                                      <button class="btn border  rounded-pill py-lg-2" click="signUpFacebook">
+                                          <i class="fa-brands fa-facebook me-1 icon-fb"></i>
+                                          Signup with Facebook
+                                      </button>
+                                      <button class="btn border  rounded-pill py-lg-2" click="signUpGoogle">
+                                          <i class="fa-brands fa-google-plus me-1 icon-google"></i>
+                                          Signup with Google
+                                      </button>
+                              </div>
+                          </div>
+                          <div class="have-account-option text-center mt-2">
+                              <p>Already have an account?
+                                <a routerLink="/log-in">Login Here</a>
+
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
