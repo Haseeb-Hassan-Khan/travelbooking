@@ -25,6 +25,7 @@ export class AdminPostComponent implements OnInit {
       arrival: [''],
       recommend_survey: [''],
       useful_survey: [''],
+      price: [],
       message: ['']
     });
   }

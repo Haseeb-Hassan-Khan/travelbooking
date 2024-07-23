@@ -339,3 +339,135 @@ footer > span {
   font-size: 1em;
   color: #555;
 }
+
+.containers{
+    /* background:linear-gradient(45deg, blueviolet, lightgreen); */
+    padding:15px 9%;
+    padding-bottom: 10px;
+}
+
+.containers .heading{
+    padding-bottom: 15px;
+    padding-top: 80px;
+
+    color: rgb(129, 9, 129);
+    text-shadow: 0 5px 10px rgba(0,0,0,.2);
+    font-size: 50px;
+}
+
+.containers .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:15px;
+}
+
+.containers .box-container .box{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: left;
+    padding:30px 20px;
+}
+
+.containers .box-container .box img{
+    float: left;
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+    margin-right: 100px;
+}
+
+.containers .box-container .box h2{
+    padding-bottom: 10px;
+}
+
+.containers .box-container .box h3{
+    color:#3d3a3a;
+    font-size: 22px;
+    padding:10px 0 10px 0;
+}
+
+.containers .box-container .box p{
+    color:#3c3838;
+    font-size: 15px;
+    line-height: 1.8;
+    padding:10px 0 10px 0;
+}
+
+.containers .box-container .box .btn{
+    margin-top: 10px;
+    display: inline-block;
+    background:#333;
+    color:#fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    cursor: pointer;
+}
+
+/* .containers .box-container .box .btn:hover{
+    letter-spacing: 1px;
+} */
+
+.product-color{
+    border: 3px solid #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.quantity-group{
+    margin-top: 20px;
+    margin-left: 41%;
+}
+
+.quantity-group button{
+    padding: 10px;
+    background-color: rgb(168, 119, 168);
+    cursor: pointer;
+}
+.quantity-group input{
+    padding: 10px;
+    width: 40px;
+    border: solid 1px plum;
+}
+
+.message-section {
+  background-color: #f9f9f9; /* Light background */
+  border: 1px solid #de7906; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px; /* Padding inside the section */
+  text-align: center; /* Center align text */
+  margin-bottom: 20px; /* Space below the message section */
+  }
+
+.message {
+  font-size: 18px; /* Font size for message */
+  color: #333; /* Text color */
+  font-weight: bold; /* Bold text */
+  margin: 0; /* No margin */
+}
+
+
+/* .container .box-container .box:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+} */
+.animated-image {
+  transition: transform 0.3s ease-in-out;
+}
+.animated-image:hover {
+  transform: scale(1.1);
+}
+
+.animated-image:active {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+
+@media (max-width:768px){
+    .containers{
+        padding:20px;
+    }
+}

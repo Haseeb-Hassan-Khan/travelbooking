@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import {initialDataState } from '../store/travel.model';
-import { signupLoadFailure, signupLoadSuccess,signupLoadItems,postData, postSignupDataFailure, postSignupDataSuccess } from './travel.action';
+import { signupLoadFailure, signupLoadSuccess,signupLoadItems,postData, postSignupDataFailure, postSignupDataSuccess, postBookingConfirmation, postBookingConfirmationSuccess, postBookingConfirmationFailure } from './travel.action';
 
 export const travelReducer = createReducer(
   initialDataState,
@@ -30,6 +30,21 @@ export const travelReducer = createReducer(
     loading: false,
   })),
   on(postSignupDataFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error,
+  })),
+  on(postBookingConfirmation, state => ({
+    ...state,
+    loading: true,
+    error: null,
+  })),
+  on(postBookingConfirmationSuccess, (state, { item }) => ({
+    ...state,
+    item,
+    loading: false,
+  })),
+  on(postBookingConfirmationFailure, (state, { error }) => ({
     ...state,
     loading: false,
     error,

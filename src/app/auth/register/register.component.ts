@@ -50,8 +50,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger
-   
     const formEmail = this.registerForm.value.signup_email;
     const existingEmail = this.itemList.some(data => data.signup_email == formEmail);
     if (this.registerForm.valid && !existingEmail) {

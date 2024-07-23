@@ -4,6 +4,7 @@ import { DisplayServicesComponent } from './display-services/display-services.co
 import { UserPannelRoutingModule } from './user-pannel-routing.module';
 import { AdminServiceService } from '../admin-post/admin-service.service';
 import { SelectedBusPageComponent } from './selected-bus-page/selected-bus-page.component';
+import { ReceiptGenerateComponent } from './receipt-generate/receipt-generate.component';
 
 
 
@@ -11,6 +12,7 @@ import { SelectedBusPageComponent } from './selected-bus-page/selected-bus-page.
   declarations: [
     DisplayServicesComponent,
     SelectedBusPageComponent,
+    ReceiptGenerateComponent,
     
   ],
   imports: [

@@ -19,22 +19,41 @@
   </header>
 
   <div class="container"></div>
-
-  <section id="hero">
-    <h2>Handcrafted, home-made masterpieces</h2>
-    <form id="form" action="https://www.freecodecamp.com/email-submit">
-      <input
-        name="email"
-        id="email"
-        type="email"
-        placeholder="Enter your email address"
-        required
-      />
-      <input id="submit" type="submit" value="Get Started" class="btn" />
-    </form>
-  </section>
+  <div class="container containers" *ngIf="selectedBusServices">
+    <h1 class="heading">{{selectedBusServices.bus_name}}</h1>
+    
+    <div class="box-container">
+        <div class="box">
+            <div class="d-flex justify-content-center">
+              <img [src]="selectedBusServices.vehicle_imgUrl" class="animated-image" alt="image">
+              <div class="d-flex flex-column">
+                <h2 *ngIf="selectedBusServices.price; else noPrice">Price: PKR {{selectedBusServices.price}}</h2>
+                <ng-template #noPrice>
+                  <h2>Price not available</h2>
+                </ng-template>
+                <p>Destination: {{selectedBusServices.destination}} </p>
+                <p>Arrival: {{selectedBusServices.arrival}}</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a class="btn" type="button" style="background: #de7906;" (click)="bookTicket(selectedBusServices)">Book ticket</a>&nbsp;
+                <a class="btn" style="background: #de7906;">Remove From Cart</a>&nbsp;
+                <a class="btn" type="button" (click)="addToCart()">Add To Cart</a>
+            </div>
+            <div class="pt-3">
+              <div class="message-section">
+                <p class="message ">{{selectedBusServices.message}}</p>
+              </div>
+            </div>
+            <div class="quantity-group">
+                <button >-</button>
+                <input type="text" value="quantity">
+                <button >+</button>
+            </div>
+        </div>
+    </div>
+  </div>
   
-
   <div class="container">
     <section id="pricing">
       <div class="product" id="tenor" *ngIf="selectedBusServices">
@@ -75,32 +94,30 @@
       <div class="grid">
         <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
         <div class="desc">
-          <h2>Premium Materials</h2>
+          <h2>Quality Travel Experience</h2>
           <p>
-            Our trombones use the shiniest brass which is sourced locally. This
-            will increase the longevity of your purchase.
+            Our buses feature premium materials and comfortable seating, ensuring a safe and enjoyable journey for all passengers.
           </p>
         </div>
       </div>
       <div class="grid">
         <div class="icon"><i class="fa fa-3x fa-truck"></i></div>
         <div class="desc">
-          <h2>Fast and Safe Travelling</h2>
+          <h2>Safe Travels</h2>
           <p>
-            We make sure you recieve your trombone as soon as we have finished
-            making it. We also provide free returns if you are not satisfied.
+            We ensure timely departures and hassle-free returns if you’re not satisfied. Your comfort and satisfaction are our top priorities.
           </p>
         </div>
       </div>
       <div class="grid">
         <div class="icon">
-          <i class="fa fa-3x fa-battery-full" aria-hidden="true"></i>
+          <!-- <i class="fa fa-3x fa-battery-full" aria-hidden="true"></i> -->
+          <i class="fa fa-3x fa-concierge-bell" aria-hidden="true"></i> 
         </div>
         <div class="desc">
-          <h2>Quality Assurance</h2>
+          <h2>Premium Comfort</h2>
           <p>
-            For every purchase you make, we will ensure there are no damages or
-            faults and we will check and test the pitch of your instrument.
+            Enjoy our comfortable AC seats, friendly hosts, complimentary internet, and refreshing snacks for an exceptional travel experience.
           </p>
         </div>
       </div>
@@ -125,4 +142,32 @@
     </footer>
   </div>
 </div>
+ 
+
+
+
+
+
+<div class="modal fade" id="bookTicketModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 

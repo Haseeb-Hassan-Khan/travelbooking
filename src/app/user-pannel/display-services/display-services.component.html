@@ -1,4 +1,4 @@
-<div class="games">
+<!-- <div class="games">
   <div *ngFor="let busOwner of busOwnerData" class="banner_wrapper">
     <div class="banner">
       <img [src]="busOwner.vehicle_imgUrl" alt="Banner Game" class="banner__image">
@@ -17,6 +17,23 @@
       </div>
     </div>
   </div>
+</div> -->
+<div class="container">
+
+  <h1 class="heading">Available Services</h1>
+
+  <div class="box-container">
+
+      <div class="box"  *ngFor="let busOwner of busOwnerData">
+          <img [src]="busOwner.vehicle_imgUrl" >
+          <h3>{{ busOwner.bus_name }}</h3>
+          <p>Destination: {{ busOwner.destination }}</p>
+          <p>Arrival: {{ busOwner.arrival }}</p>
+          <a type="button" (click)="goToSelectedBusPage(busOwner)" class="btn">View Details</a>
+      </div>
+
+  </div>
+
 </div>
 
 

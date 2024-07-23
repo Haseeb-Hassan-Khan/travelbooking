@@ -5,11 +5,12 @@ import { of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { AuthServiceService } from '../auth/auth-service.service';
-import { signupLoadItems, signupLoadFailure, signupLoadSuccess, postSignupDataFailure, postData, postSignupDataSuccess} from './travel.action';
+import { signupLoadItems, signupLoadFailure, signupLoadSuccess, postSignupDataFailure, postData, postSignupDataSuccess, postBookingConfirmation, postBookingConfirmationSuccess, postBookingConfirmationFailure, BookingConfirmationLoad} from './travel.action';
+import { UserService } from '../user-pannel/user.service';
 
 @Injectable()
 export class travelEffects {
-  constructor(private actions$: Actions, private http: HttpClient, private dataService: AuthServiceService) { }
+  constructor(private actions$: Actions, private http: HttpClient, private dataService: AuthServiceService, private postConfirmBooking: UserService) { }
 
   loadData$ = createEffect(() =>
     this.actions$.pipe(
@@ -43,6 +44,26 @@ export class travelEffects {
           catchError(error => {
             console.error('Error posting data:', error);
             return of(postSignupDataFailure({ error: error.message }));
+          })
+        );
+      })
+    )
+  );
+
+  
+  postBookingConfirmation$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(postBookingConfirmation),
+      switchMap(action => {
+        console.log('Post Data action dispatched', action);
+        return this.postConfirmBooking.postConfirmBooking(action.item).pipe(
+          map((item: any) => {
+            console.log('Booking Confirm Effect:', item);
+            return postBookingConfirmationSuccess({ item });
+          }),
+          catchError(error => {
+            console.error('Error posting data:', error);
+            return of(postBookingConfirmationFailure({ error: error.message }));
           })
         );
       })
